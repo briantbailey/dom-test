@@ -4,6 +4,7 @@
   "description": "A starter for creating a TypeScript package.",
   "type": "module",
   "license": "MIT",
+  "packageManager": "pnpm@8.11.0",
   "homepage": "https://github.com/author/library#readme",
   "bugs": {
     "url": "https://github.com/author/library/issues"
