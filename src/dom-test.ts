@@ -9,3 +9,7 @@ export const helloString = (string: string): string => {
 export const doubleString = (string: string): string => {
   return string + " " + string;
 };
+
+export const tripleString = (string: string): string => {
+  return string + " " + string + " " + string;
+};

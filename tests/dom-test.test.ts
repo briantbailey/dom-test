@@ -1,5 +1,10 @@
 import { expect, test } from "vitest";
-import { myFunction, doubleString, helloString } from "../src/dom-test";
+import {
+  myFunction,
+  doubleString,
+  helloString,
+  tripleString,
+} from "../src/dom-test";
 
 test("myFunction", () => {
   expect(myFunction()).toBe("Hello, world!");
@@ -11,4 +16,10 @@ test("helloString", () => {
 
 test("doubleString", () => {
   expect(doubleString("Hello, world!")).toBe("Hello, world! Hello, world!");
+});
+
+test("tripleString", () => {
+  expect(tripleString("Hello, world!")).toBe(
+    "Hello, world! Hello, world! Hello, world!"
+  );
 });
