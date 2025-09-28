@@ -1,9 +1,19 @@
-import { defineConfig } from 'tsdown'
+import { defineConfig } from "tsdown";
 
 export default defineConfig([
   {
-    entry: ['./src/index.ts'],
-    platform: 'neutral',
+    entry: ["./src/dom-test.ts"],
+    platform: "neutral",
     dts: true,
+    format: ["esm"],
+    outDir: "./dist",
   },
-])
+  {
+    entry: ["./src/dom-test.ts"],
+    platform: "browser",
+    minify: true,
+    outDir: "./dist",
+    outputOptions: { name: "domTest" },
+    format: ["iife"],
+  },
+]);

@@ -16,11 +16,11 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/dom-test.js",
+  "module": "./dist/dom-test.js",
+  "types": "./dist/dom-test.d.ts",
   "exports": {
-    ".": "./dist/index.js",
+    ".": "./dist/dom-test.js",
     "./package.json": "./package.json"
   },
   "publishConfig": {
