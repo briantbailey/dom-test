@@ -31,6 +31,10 @@
     "dev": "tsdown --watch",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
+    "prebuild": "node ./scripts/generate-version.js",
+    "prerelease": "npm run prebuild && npm run build",
+    "bump": "bumpp --execute 'npm run prebuild && npm run build'",
+    "publish": "npm publish",
     "release": "bumpp && npm publish"
   },
   "devDependencies": {

@@ -1,3 +1,4 @@
+export { version } from "./version";
 import type { MyStrings } from "./types";
 
 export const myFunction = (): string => {
@@ -14,6 +15,10 @@ export const doubleString = (string: string): string => {
 
 export const tripleString = (string: string): string => {
   return string + " " + string + " " + string;
+};
+
+export const myNumber = (num: number): number => {
+  return num;
 };
 
 export const myStrings = (name: string): MyStrings => {
