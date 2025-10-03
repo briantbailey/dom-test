@@ -31,7 +31,7 @@
     "dev": "tsdown --watch",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "prebuild": "node ./scripts/generate-version.js",
+    "prebuild": "node ./scripts/generate-version.js && git add src/version.ts",
     "bump": "bumpp --execute \"npm run build\"",
     "publish": "npm publish",
     "jsrpublish": "npx jsr publish",
