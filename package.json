@@ -1,6 +1,6 @@
 {
   "name": "@briantbailey/dom-test",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A starter for creating a TypeScript package.",
   "type": "module",
   "license": "MIT",
@@ -32,8 +32,8 @@
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "prebuild": "node ./scripts/generate-version.js",
-    "prerelease": "npm run prebuild && npm run build",
-    "bump": "bumpp --execute 'npm run prebuild && npm run build'",
+  "prerelease": "npm run prebuild && npm run build",
+  "bump": "bumpp --execute \"npm run build\"",
     "publish": "npm publish",
     "release": "bumpp && npm publish"
   },
