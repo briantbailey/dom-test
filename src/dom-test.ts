@@ -1,5 +1,6 @@
-export { version } from "./version";
 import type { MyStrings } from "./types";
+
+export { version } from "./version";
 
 export const myFunction = (): string => {
   return "Hello, world!";
