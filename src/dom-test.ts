@@ -3,7 +3,7 @@ import type { MyStrings } from "./types";
 export { version } from "./version";
 
 export const myFunction = (): string => {
-  return "Hello, world!!";
+  return "Hello, world!";
 };
 
 export const helloString = (string: string): string => {
