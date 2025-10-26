@@ -13,6 +13,7 @@ export default defineConfig([
     platform: "browser",
     minify: true,
     outDir: "./dist",
+    sourcemap: true,
     outputOptions: { name: "domTest" },
     format: ["iife"],
   },

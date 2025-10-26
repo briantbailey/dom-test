@@ -21,6 +21,30 @@ jobs:
         with:
           node-version: lts/*
 
+      - name: Install dependencies
+        # Use npm ci for reproducible installs when package-lock.json is present.
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Build
+        run: npm run build
+
+      - name: Zip IIFE bundle and sourcemap
+        run: |
+          zip -j dist/dom-test-iife.zip dist/dom-test.iife.js dist/dom-test.iife.js.map
+
       - run: npx changelogithub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload IIFE zip to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/dom-test-iife.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
