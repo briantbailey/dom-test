@@ -22,6 +22,10 @@ export const myNumber = (num: number): number => {
   return num;
 };
 
+export const squareNumber = (num: number): number => {
+  return num * num;
+};
+
 export const myStrings = (name: string): MyStrings => {
   return {
     hello: helloString(name),
