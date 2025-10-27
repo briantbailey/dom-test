@@ -6,7 +6,7 @@ permissions:
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
 
 jobs:
   release:
@@ -33,18 +33,24 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Zip IIFE bundle and sourcemap
+      - name: Create versioned IIFE bundle and zip
         run: |
-          zip -j dist/dom-test-iife.zip dist/dom-test.iife.js dist/dom-test.iife.js.map
+          VERSION=${GITHUB_REF#refs/tags/}
+          cd dist
+          cp dom-test.iife.js dom-test-${VERSION}.iife.js
+          cp dom-test.iife.js.map dom-test-${VERSION}.iife.js.map
+          zip -j dom-test-${VERSION}.iife.zip dom-test-${VERSION}.iife.js dom-test-${VERSION}.iife.js.map
 
       - run: npx changelogithub
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload IIFE zip to release
+      - name: Upload IIFE assets to release
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            dist/dom-test-iife.zip
+            dist/dom-test-*.iife.zip
+            dist/dom-test-*.iife.js
+            dist/dom-test-*.iife.js.map
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
