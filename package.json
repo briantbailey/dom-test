@@ -1,6 +1,6 @@
 {
   "name": "@briantbailey/dom-test",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A starter for creating a TypeScript package.",
   "type": "module",
   "license": "MIT",
