@@ -35,5 +35,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Publish
+      - name: Publish to npm
         run: npm publish
+
+      - name: Publish to jsr.io
+        run: npx jsr publish
